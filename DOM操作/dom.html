@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      border: 1px solid rebeccapurple;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">
+    this is div1
+    <p id="p1">this is p1</p>
+  </div>
+  <div id="div2">
+    this is div2
+  </div>
+  <script>
+     
+    // 新增元素
+    var p = document.createElement('p')
+    var div1 = document.querySelector('#div1')
+    p.id = 'p2'
+    p.innerHTML = 'this is p2';
+    div1.appendChild(p)
+    
+    // 移动元素
+    var p1 = document.querySelector('#p1')
+    div2.appendChild(p1)
+
+  </script>
+</body>
+</html>
