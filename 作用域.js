@@ -5,4 +5,4 @@ function fn(name) {
   var a
 }
 
-fn('zhangshan')
+fn('zhangshan1')
