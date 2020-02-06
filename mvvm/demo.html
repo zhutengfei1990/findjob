@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{ price }}</p>
+  </div>
+  <script src="./vue-2.5.13.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          price: 100
+        }
+      },
+    })
+
+    // 重写render ppt中的
+    function render() {
+      with(this) { // this就是vm
+
+        // _c: createElement; _v: 创建文本标签; _s toString
+        return _c(
+          'div',
+          {
+            attrs: {'id': 'app'}
+          },
+          [
+            _c('p',[_v(_s(price))])
+          ]
+        )
+      }
+    }
+  </script>
+</body>
+</html>

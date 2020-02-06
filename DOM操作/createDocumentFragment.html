@@ -1,0 +1,26 @@
+<!-- DocumentFragments 是DOM节点。它们不是主DOM树的一部分,文档片段存在于内存中更好的性能 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="ul">
+
+  </ul>
+  <script>
+    var elements = document.querySelector('#ul');
+    var fragment = document.createDocumentFragment();
+    var browsers = ['FF', 'Chrome', 'IE'];
+    browsers.forEach(function(browser) {
+      var li = document.createElement('li');
+      li.textContent = browser;
+      fragment.appendChild(li);
+    });
+    elements.appendChild(fragment);
+  </script>
+</body>
+</html>

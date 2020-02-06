@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>圣杯布局flex</title>
+  <style>
+    .holy-grail {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      background-color: antiquewhite;
+      margin: 0;
+    }
+    
+    header,
+    footer {
+      flex: 1;
+      background-color: gray;
+    }
+
+    .holy-grail-body {
+      display: flex;
+      flex: 1;
+      height: 800px;
+    }
+
+    .holy-grail-content {
+      /* flex: 1; */
+      height: 800px;
+    }
+
+    .holy-grail-nav,
+    .holy-grail-ads {
+      flex: 0 0 12em;
+    }
+
+    .holy-grail-nav {
+      order: -1;
+    }
+  </style>
+</head>
+<body class="holy-grail">
+  <header>this is header</header>
+  <div class="holy-grail-body">
+    <main class="holy-grail-content">main</main>
+    <nav class="holy-grail-nav">nav</nav>
+    <aside class="holy-grail-ads">aside</aside>
+  </div>
+  <footer>this is footer</footer>
+</body>
+</html>
