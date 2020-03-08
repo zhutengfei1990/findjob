@@ -28,3 +28,4 @@ console.log('merge test');
 console.log('submit 1');
 console.log('submit 2');
 console.log('submit 3');
+console.log('merge 1');
