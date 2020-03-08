@@ -31,6 +31,5 @@ console.log('submit 3');
 console.log('merge 1');
 console.log('merge 2');
 console.log('merge 3');
-console.log('rebase 4');
-console.log('rebase 5');
 console.log('another branch');
+console.log('1.1');
