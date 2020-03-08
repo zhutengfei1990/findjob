@@ -27,3 +27,4 @@ console.log('rebase test');
 console.log('merge test');
 console.log('submit 1');
 console.log('submit 2');
+console.log('submit 3');
