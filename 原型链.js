@@ -22,3 +22,5 @@ var div1 = new Elme('main')
 div1.html('hello world').on('click', function() {
   alert('clicked')
 })
+
+console.log('rebase test');
