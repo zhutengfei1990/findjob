@@ -33,3 +33,4 @@ console.log('merge 2');
 console.log('merge 3');
 console.log('rebase 4');
 console.log('rebase 5');
+console.log('another branch');
