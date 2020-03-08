@@ -24,3 +24,4 @@ div1.html('hello world').on('click', function() {
 })
 
 console.log('rebase test');
+console.log('merge test');
