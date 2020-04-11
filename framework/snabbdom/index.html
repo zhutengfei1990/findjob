@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+
+  </div>
+  <button id="btn">change</button>
+  <script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom.js"></script>
+  <script src="https://cdn.bootcss.com/snabbdom/0.7.4/h.js"></script>
+  <script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-class.js"></script>
+  <script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-eventlisteners.min.js"></script>
+  <script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-props.js"></script>
+  <script src="https://cdn.bootcss.com/snabbdom/0.7.4/snabbdom-style.js"></script>
+  <script>
+    var snabbdom = window.snabbdom;
+    var patch = snabbdom.init([
+      snabbdom_class,
+      snabbdom_props,
+      snabbdom_style,
+      snabbdom_eventlisteners
+    ])
+    
+    var h = snabbdom.h
+
+    var container = document.querySelector('#container')
+    var vnode = h('ul.cls', {}, [
+      h('li.item', {}, 'item1'),
+      h('li.item', {}, 'item2'),
+    ])
+
+    patch(container, vnode);
+
+    document.querySelector('#btn').addEventListener('click', function () { 
+      var newVnode = h('ul.cls', {}, [
+        h('li.item', {}, 'item1'),
+        h('li.item', {}, 'item3'),
+      ])
+
+      patch(vnode, newVnode)
+    })
+  </script>
+</body>
+</html>
