@@ -8,7 +8,8 @@
 </head>
 <body>
   <button id="btn">扫一扫</button>
-
+  <button id="share">分享</button>
+  <script src="./invoke.js"></script>
   <script>
     function invokeScan() {
       window['_invoke_scan_callback_'] = function(result) {
@@ -28,6 +29,12 @@
 
     document.getElementById('btn').addEventListener('click', function() {
       invokeScan();
+    })
+
+    document.getElementById('share').addEventListener('click', function() {
+      window.invoke.share({ title: 'xxx' }, function(res) {
+
+      })
     })
   </script>
 </body>
