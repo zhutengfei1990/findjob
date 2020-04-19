@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">执行</button>
+  <script>
+    var ele = document.querySelector('#btn')
+    var rate = 0;
+    function step() {
+      rate += 1;
+      ele.style.width = rate + '%';
+      if (rate < 100) {
+        requestAnimationFrame(step);
+      }
+    }
+    requestAnimationFrame(step)
+  </script>
+</body>
+</html>
