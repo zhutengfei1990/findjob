@@ -90,6 +90,35 @@ class Promise2 {
       })
     })
   }
+  all(promises) {
+    return new Promise((resolve, reject) => {
+      const result = [];
+      if (promises.length === 0)  {
+        resolve([]);
+      } else {
+        for(let i = 0; i < promises.length; i ++) {
+          Promise.resolve(promises[i]).then((data) => {
+            result.push(data);
+          }, err => {
+            reject(err);
+            return
+          });
+        }
+        resolve(result);
+      }
+    });
+  }
+  race(promises) {
+    return new Promise((resolve, reject) => {
+      for(let i = 0; i < promises.length; i ++) {
+        Promise.resolve(promises[i]).then(val => {
+          resolve(val);
+        }).catch(err => {
+          reject(err);
+        })
+      }
+    });
+  }
 }
 
 const promise = new Promise2((resolve, reject) => {
