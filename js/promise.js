@@ -1,14 +1,18 @@
 
+const PENDING = 'pending';
+const FULFILLED = 'fulfilled';
+const REJECTED = 'rejected';
+
 class Promise2 {
   constructor(fn) {
-    this.state = 'pending';
+    this.state = PENDING;
     this.value = '';
     this.reason = '';
     this.onFulfilledCbs = [];
     this.onRejectCbs = [];
     const resolve = value => {
-      if (this.state === 'pending') {
-        this.state = 'fulfilled';
+      if (this.state === PENDING) {
+        this.state = FULFILLED;
         this.value = value;
         this.onFulfilledCbs.forEach(cb => {
           this.value = cb(this.value);
@@ -16,8 +20,8 @@ class Promise2 {
       }   
     }
     const reject = reason => {
-      if (this.state === 'pending') {
-        this.state = 'rejected';
+      if (this.state === PENDING) {
+        this.state = REJECTED;
         this.reason = reason;
         this.onRejectCbs.forEach(cb => {
           this.reason = cb(this.reason);
