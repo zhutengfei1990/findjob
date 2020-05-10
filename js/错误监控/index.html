@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <img src='https://dss0.baidu.com/6ONWsjip0QIZ8tyhnq1/it/u=2284231965,2288982797&fm=85&app=92&f=JPEG?w=121&h=75&s=BA8BA14C6BACB96240CADD9F0300B08B'/> -->
+  <script>
+    // 以下两种都不能捕获被catch的错误。
+    // 不能捕获js和css的加载错误，可以捕获运行错误。
+    window.onerror = function(message, url, line) {
+      console.log(message, url, line);
+    }
+    // 在捕获阶段，可以用来检测js和css的加载错误。
+    window.addEventListener('error', function(event) {
+      console.log(event);
+    }, true);
+
+    try {
+      var a = 1;
+      var c = a.b.c + 1;
+    } catch(error) {
+      console.log(error.message)
+    }
+    // var script = document.createElement('script');
+    // script.src= 'https://dss0.baidu.com/1.js';
+    // document.body.appendChild(script);
+
+  </script>
+  <!-- <script src='https://dss0.baidu.com/1.js'></script> -->
+</body>
+</html>
